@@ -27,7 +27,7 @@ let highScore = localStorage.getItem("betomHighScore") || 0;
 let isJumping = false;
 let isSuperJumpActive = false;
 let powerupTimeLeft = 0;
-let gameSpeed = 6;
+let gameSpeed = 7;
 let gameActive = false;
 let activeObjects = [];
 let spawnInterval, timerInterval;
@@ -158,15 +158,15 @@ function spawnObject() {
     if (objData.class) elem.classList.add(objData.class);
     elem.innerHTML = objData.content || '';
 
-    let posX = 950;
+    let posX = window.innerWidth + 50;
     elem.style.left = posX + "px";
     
     if (objData.subtype === 'banana' || objData.subtype === 'music') {
-        elem.style.bottom = (Math.random() > 0.5 ? 130 : 60) + "px";
+        elem.style.bottom = (Math.random() > 0.5 ? 160 : 80) + "px";
     } else if (objData.rare) {
-        elem.style.bottom = "170px";
+        elem.style.bottom = "200px";
     } else {
-        elem.style.bottom = "60px";
+        elem.style.bottom = "80px";
     }
 
     gamePlayArea.appendChild(elem);
@@ -192,7 +192,7 @@ function updateLivesDisplay() {
 function startGame() {
     score = 0;
     lives = 3;
-    gameSpeed = 6;
+    gameSpeed = 7;
     activeObjects = [];
     isInvulnerable = false;
     scoreDisplay.innerText = "Skor: 0";
@@ -200,7 +200,7 @@ function startGame() {
     gameActive = true;
     playBGM();
 
-    spawnInterval = setInterval(spawnObject, 2200);
+    spawnInterval = setInterval(spawnObject, 2000);
 
     timerInterval = setInterval(() => {
         if (isSuperJumpActive) {
@@ -295,4 +295,5 @@ function gameOver() {
     finalScoreText.innerText = "Skorun: " + score;
     gamePlayArea.classList.add("hidden");
     gameOverScreen.classList.remove("hidden");
-}
+    }
+            
