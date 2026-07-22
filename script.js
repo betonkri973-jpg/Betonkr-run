@@ -295,4 +295,5 @@ function gameOver() {
     finalScoreText.innerText = "Skorun: " + score;
     gamePlayArea.classList.add("hidden");
     gameOverScreen.classList.remove("hidden");
-}
+                   }
+                       
