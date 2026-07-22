@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beton Archive Sunar: Koşu Oyunu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container" id="gameContainer">
+        <!-- 1. INTRO / SUNUM EKRANI -->
+        <div id="introScreen" class="screen">
+            <h1 class="intro-text">Beton Archive Sunar</h1>
+        </div>
+
+        <!-- 2. ANA MENÜ EKRANI -->
+        <div id="menuScreen" class="screen hidden">
+            <h1 class="game-title">KOŞU OYUNU</h1>
+            <div class="menu-buttons">
+                <button id="startBtn" class="menu-btn">Oyuna Başla</button>
+                <button id="howToPlayBtn" class="menu-btn">Nasıl Oynanır</button>
+                <button id="achievementsBtn" class="menu-btn">Başarımlar</button>
+                <button id="highScoreBtn" class="menu-btn">En Yüksek Skor</button>
+            </div>
+        </div>
+
+        <!-- 3. NASIL OYNANIR MODALI -->
+        <div id="modalScreen" class="screen hidden">
+            <div class="modal-content">
+                <h2>Nasıl Oynanır?</h2>
+                <p>• <b>Boşluk (Space)</b> veya ekrana tıklayarak zıplayabilirsin.</p>
+                <p>• Taş, diken ve patates çuvalı engellerinden kaç!</p>
+                <p>• 🎵 Toplayarak puanını artır.</p>
+                <p>• 🍌 Toplayarak 10 saniye boyunca süper zıplama gücü kazan.</p>
+                <p>• 📀 En nadir öğeyi toplayarak büyük bonus kazan!</p>
+                <button id="backToMenuBtn" class="menu-btn">Geri Dön</button>
+            </div>
+        </div>
+
+        <!-- 4. BAŞARIMLAR EKRANI -->
+        <div id="achievementScreen" class="screen hidden">
+            <div class="modal-content">
+                <h2>Başarımlar</h2>
+                <p>🏆 Acemi Koşucu (Skor: 100)</p>
+                <p>🎵 Müzik Tutkunu (5 Nota Topla)</p>
+                <p>📀 Nadir Avcısı (1 CD Topla)</p>
+                <button id="backToMenuFromAchBtn" class="menu-btn">Geri Dön</button>
+            </div>
+        </div>
+
+        <!-- 5. OYUN BİTTİ (KRILANDIN) EKRANI -->
+        <div id="gameOverScreen" class="screen hidden">
+            <div class="modal-content">
+                <h2 style="color: #e74c3c;">Krılandın</h2>
+                <p id="finalScoreText" style="text-align: center; font-size: 20px; margin-bottom: 20px;">Skorun: 0</p>
+                <button id="restartBtn" class="menu-btn">Yeniden Başla</button>
+                <button id="menuReturnBtn" class="menu-btn" style="background-color: #7f8c8d; box-shadow: 0 4px #2c3e50; margin-top: 10px;">Ana Menü</button>
+            </div>
+        </div>
+
+        <!-- 6. OYUN İÇİ ARAYÜZ VE OYUN ALANI -->
+        <div id="gamePlayArea" class="hidden">
+            <div class="background" id="background"></div>
+            <div class="hud">
+                <div id="score">Skor: 0</div>
+                <div id="livesDisplay">💙💙💙</div>
+                <div id="powerupTimer"></div>
+            </div>
+
+            <!-- Karakterimiz -->
+            <div id="player" class="player-container">
+                <div class="hat-and-hand">
+                    <div class="hat"><div class="hat-band"></div></div>
+                    <div class="hand"></div>
+                </div>
+                <div class="face">
+                    <div class="eye left-eye"></div>
+                    <div class="eye right-eye"></div>
+                    <div class="mouth"></div>
+                </div>
+                <div class="hair">
+                    <div class="hair-base"></div>
+                    <div class="red-highlight"></div>
+                </div>
+                <div class="jacket">
+                    <div class="shirt-collar"></div>
+                    <div class="shirt-pattern"></div>
+                    <div class="necklace"></div>
+                </div>
+                <div class="pants"><div class="belt"></div></div>
+                <div class="boots"></div>
+            </div>
+
+            <div class="ground"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
